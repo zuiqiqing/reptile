@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+# http://www.netscape.com/newsref/std/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.baidu.com	TRUE	/	FALSE	3575781826	BAIDUID	4080977BC17014F299BA20C2E722DD64:FG=1
+.baidu.com	TRUE	/	FALSE	3575781826	BIDUPSID	4080977BC17014F299BA20C2E722DD64

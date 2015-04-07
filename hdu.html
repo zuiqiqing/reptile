@@ -1,0 +1,157 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<script type="text/javascript" src="j/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="j/jquery.toggle.js"></script>
+		<script type="text/javascript" src="j/md5.js"></script>
+		<title>数字杭电 | Digitalized DCP</title>
+		<script language="JavaScript"> 
+			function is_pc(){ 
+				var os = new Array("Android","iPhone","Windows Phone","iPad","BlackBerry","MeeGo","SymbianOS","UCWEB","Adr","UCBrower");  // 其他类型的移动操作系统类型，自行添加 
+				var info = navigator.userAgent; 
+				var len = os.length; 
+				for (var i = 0; i < len; i++) { 
+					if (info.indexOf(os[i]) > 0){ 
+						return os[i];  
+					} 
+				} 
+				return "PC"; 
+			} 
+		</script> 
+		<script>
+             var cas_domain="cas.hdu.edu.cn";
+             function clearContent(){
+           		var user = $("#username");
+           		if(user.val()=="学号/工号"){
+           			user.val("");
+           			user.css("color","#000");
+           		}else{
+           			user.css("color","#000");
+           		}
+           	 }
+             function initUserNameInputColor() {
+ 				$('#username').css('color', '#999');
+ 			 }
+ 			 function setColor(){
+ 				 var user = $("#username");
+ 				 if(user.val()!="学号/工号")
+            			 user.css("color","#000");
+ 			 }
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var hash = location.href ;
+				if(hash.indexOf('#')>0){
+					hash = hash.substring(hash.indexOf('#'));
+					document.cookie = 'dcp_cas_hash='+hash;
+				}
+			})();
+		</script>
+		<script type="text/javascript" src="j/login.js"></script>
+		
+		
+		
+		
+		
+		
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="decription" content="" />
+ 		<script>
+ 		if (is_pc()=="PC")
+		{		document.write("<link href='c/login_i.css' rel='stylesheet' type='text/css' /><link href='c/loginpage.css' rel='stylesheet' type='text/css' />");
+		}
+		else
+		{		document.write("<link href='c/loginpage.css' rel='stylesheet' type='text/css' /><link href='c/login_i.css' rel='stylesheet' type='text/css' />");
+		}
+	        
+		</script>
+<!-- 		<link href="c/landingpage.css" media="screen" rel="stylesheet" -->
+<!-- 			type="text/css" /> -->
+	</head>
+
+	<body id="login" >
+		<script>
+ 		if (is_pc()=="PC")
+		{
+			document.write("<div id=wrapper class=loginpage_wrrap><div class=loginpage_head id=header>");
+			document.write("<div class=loginpage_head_center><img src='i/comm/nb_logo.png' width=335 height=65 />");
+	        document.write("<a href='#' class='loginpage_head_icon'>帮助</a></div></div><div id='main' class='loginpage_center'><div class='loginpage_center_main'>");
+		}
+		else
+		{
+		   document.write("<div class=page><div class='mod mod-logo-i'><img src='i/comm/m_logo.png'   alt='hdu logo'/></div><div class='mod mod-login-i'>");
+		}
+		</script> 
+
+
+					<form id=login_form name=login_form class="login_form"
+						action="/cas/login" method=post onsubmit="return false;">
+						
+						<input type="hidden" name="encodedService"
+							value="http%3a%2f%2fi.hdu.edu.cn%2fdcp%2findex.jsp">
+						
+						<input type="hidden" name="service" value="http://i.hdu.edu.cn/dcp/index.jsp">
+						
+						<input type="hidden" name="serviceName" value="null">
+						<input type="hidden" name="loginErrCnt" id="loginErrCnt" value="0">
+						
+						<span class="loginpage_center_text">
+							用户登录
+						</span>
+						<div class="loginpage_center_row">
+								<span for="username" class="loginpage_center_font">
+									帐号：
+								</span>
+								<input class="loginpage_center_input" id="username" name=username
+									type="text" onkeydown="javascript:clearContent()" tabindex="1"
+									onkeyup="javascript:return enter(event,'username');"
+									onclick="setThis('username')" onchange="setColor()">
+						<div class="loginpage_center_row">
+								<span for="password" class="loginpage_center_font">
+									密码：
+								</span>
+								<input class="loginpage_center_input" id="password" name="password"
+									value="" tabindex="2" type="password"   onkeyup="javascript:return enter(event,'password');">
+								<input type="hidden" name="lt" value="LT-279288-eH9QP5zwl4SvK0EXlhw6" />
+						</div>
+                     
+						<div class="loginpage_center_chrow">
+								<input type="checkbox" name="autoLogin" id="autoLogin"
+									value="true" tabindex="5" class="loginpage_center_check"/>
+								<font class="loginpage_center_checkfont">保存登录信息</font>
+						</div>
+						<div class="loginpage_center_chrow">
+								<input type="button" id="login" class="loginpage_center_btn"
+									value="登录" tabindex="4" onclick="javascript:submitInfo();" />
+								<input type="button" id="login1" class="loginpage_center_btn"
+									value="忘记密码" tabindex="5" onclick="window.open('http://pwd.hdu.edu.cn/');" />
+<!-- 								<a href="/cas/pwd/pwdForget.jsp" class="logon_link">忘记密码？</a> -->
+						</div>
+						</div>
+					</form>
+		<script>
+ 		if (is_pc()=="PC")
+		{
+			document.write("</div></div></div><div class='loginpage_foot'><font class='loginpage_foot_font'>"); 
+	        document.write("<img src='i/comm/nb_logo_s.png' style='width: 115px;height: 22px;'/><a href='#' class='left'>数字杭电</a>");
+	        document.write("    <font class='left'>Copyright@ 2013</font></font><font class='right loginpage_foot_font'>【数字杭电】由杭州电子科技大学信息中心提供技术支持</font></div>");
+		}
+		else
+		{
+		   document.write("</div></div><div class='mod mod-footer-i'><p><strong>&nbsp;&nbsp;</strong></p> <p><span class='copyright'>数字杭电. &copy; Copyright 2007 - 2013 HDUNIC.</span></p></div>");
+		}
+		</script> 
+
+	</body>
+</html>
+
+
